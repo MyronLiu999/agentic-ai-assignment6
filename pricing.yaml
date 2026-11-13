@@ -28,6 +28,7 @@ unit: USD per million tokens
 # a 5-minute cache write is 1.25x, a 1-hour write is 2x, a cache read is 0.1x.
 
 models:
+  gpt-4o: {input: 2.50, output: 10.00, cache_read: 1.25, source: "https://developers.openai.com/api/docs/pricing", read: 2026-11-05}
   # Claude, read on read_date above.
   claude-opus-5:     {input: 5.00, output: 25.00, cache_write_5m: 6.25, cache_write_1h: 10.00, cache_read: 0.50}
   claude-opus-4-8:   {input: 5.00, output: 25.00, cache_write_5m: 6.25, cache_write_1h: 10.00, cache_read: 0.50}   # refusal fallback target

@@ -1,23 +1,213 @@
 {
-  "gates": {"daily": [null, null, null, null], "batch": [null, null, null, null]},
-  "constants": {"model": null, "schemas_sha": null, "checks_sha": null, "reviewer": null, "task_ids": []},
-  "arms": {
-    "S": {"single": {"runs": 0, "passes": 0, "per_task": {}, "sweep_min": null, "sweep_max": null, "all_three": 0,
-                     "mean_tokens": null, "mean_wall_s": null},
-          "batch": {"runs": 0, "passes": 0, "per_task": {}, "sweep_min": null, "sweep_max": null, "all_three": 0,
-                    "mean_tokens": null, "mean_wall_s": null}},
-    "M": {"single": {"runs": 0, "passes": 0, "per_task": {}, "sweep_min": null, "sweep_max": null, "all_three": 0,
-                     "mean_tokens": null, "mean_wall_s": null},
-          "batch": {"runs": 0, "passes": 0, "per_task": {}, "sweep_min": null, "sweep_max": null, "all_three": 0,
-                    "mean_tokens": null, "mean_wall_s": null}},
-    "S_plus": {"single": {"runs": 0, "passes": 0, "per_task": {}, "sweep_min": null, "sweep_max": null, "all_three": 0,
-                          "mean_tokens": null, "mean_wall_s": null},
-               "batch": {"runs": 0, "passes": 0, "per_task": {}, "sweep_min": null, "sweep_max": null, "all_three": 0,
-                         "mean_tokens": null, "mean_wall_s": null}}
+  "gates": {
+    "daily": ["fail", "not_reached", "not_reached", "not_reached"],
+    "batch": ["pass", "pass", "pass", "fail"]
   },
-  "multiplier": {"single": null, "batch": null},
-  "spend_check": {"single": {"spent_more": null, "spend_raises_score": null, "one_agent_as_well": null},
-                  "batch": {"spent_more": null, "spend_raises_score": null, "one_agent_as_well": null}},
-  "failures": [],
-  "decision": {"single": null, "batch": null, "revisit_condition": null}
+  "constants": {
+    "model": "gpt-4o",
+    "schemas_sha": "703c0002892f27ec",
+    "checks_sha": "55abcd67e6a3b208",
+    "reviewer": "scripted:approve-all",
+    "task_ids": [
+      "batch-a",
+      "batch-b",
+      "one-4402",
+      "one-4403",
+      "one-4405",
+      "one-4406",
+      "one-4409",
+      "one-4413"
+    ]
+  },
+  "arms": {
+    "S": {
+      "single": {
+        "runs": 18,
+        "passes": 18,
+        "per_task": {
+          "one-4402": 3,
+          "one-4403": 3,
+          "one-4405": 3,
+          "one-4406": 3,
+          "one-4409": 3,
+          "one-4413": 3
+        },
+        "sweep_min": 6,
+        "sweep_max": 6,
+        "all_three": 6,
+        "mean_tokens": 31929,
+        "mean_wall_s": 8.8
+      },
+      "batch": {
+        "runs": 6,
+        "passes": 2,
+        "per_task": {
+          "batch-a": 1,
+          "batch-b": 1
+        },
+        "sweep_min": 0,
+        "sweep_max": 1,
+        "all_three": 0,
+        "mean_tokens": 303596,
+        "mean_wall_s": 44.9
+      }
+    },
+    "M": {
+      "single": {
+        "runs": 18,
+        "passes": 10,
+        "per_task": {
+          "one-4402": 2,
+          "one-4403": 0,
+          "one-4405": 2,
+          "one-4406": 2,
+          "one-4409": 3,
+          "one-4413": 1
+        },
+        "sweep_min": 2,
+        "sweep_max": 4,
+        "all_three": 1,
+        "mean_tokens": 19339,
+        "mean_wall_s": 11.8
+      },
+      "batch": {
+        "runs": 6,
+        "passes": 0,
+        "per_task": {
+          "batch-a": 0,
+          "batch-b": 0
+        },
+        "sweep_min": 0,
+        "sweep_max": 0,
+        "all_three": 0,
+        "mean_tokens": 107597,
+        "mean_wall_s": 36.5
+      }
+    },
+    "S_plus": {
+      "single": {
+        "runs": 18,
+        "passes": 4,
+        "per_task": {
+          "one-4402": 1,
+          "one-4403": 0,
+          "one-4405": 3,
+          "one-4406": 0,
+          "one-4409": 0,
+          "one-4413": 0
+        },
+        "sweep_min": 1,
+        "sweep_max": 2,
+        "all_three": 1,
+        "mean_tokens": 19837,
+        "mean_wall_s": 6.5
+      },
+      "batch": {
+        "runs": 6,
+        "passes": 0,
+        "per_task": {
+          "batch-a": 0,
+          "batch-b": 0
+        },
+        "sweep_min": 0,
+        "sweep_max": 0,
+        "all_three": 0,
+        "mean_tokens": 69574,
+        "mean_wall_s": 18.2
+      }
+    }
+  },
+  "multiplier": {
+    "single": 0.606,
+    "batch": 0.354
+  },
+  "spend_check": {
+    "single": {
+      "spent_more": "no",
+      "spend_raises_score": "no",
+      "one_agent_as_well": "no"
+    },
+    "batch": {
+      "spent_more": "no",
+      "spend_raises_score": "no",
+      "one_agent_as_well": "yes"
+    }
+  },
+  "failures": [
+    {
+      "run_id": "split-batch-a-s01-4de1d8",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-batch-a-s02-04a405",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-batch-a-s03-729729",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-batch-b-s01-355e36",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-batch-b-s02-a68ed8",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-batch-b-s03-fbae81",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-one-4402-s03-127b0d",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-one-4403-s01-a62b3c",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-one-4403-s02-fa5380",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-one-4403-s03-d216ce",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-one-4405-s02-048114",
+      "anomaly": "none",
+      "mast": "system_design"
+    },
+    {
+      "run_id": "split-one-4406-s02-ba017c",
+      "anomaly": "none",
+      "mast": "system_design"
+    },
+    {
+      "run_id": "split-one-4413-s01-d23c65",
+      "anomaly": "none",
+      "mast": "task_verification"
+    },
+    {
+      "run_id": "split-one-4413-s02-4de404",
+      "anomaly": "none",
+      "mast": "task_verification"
+    }
+  ],
+  "decision": {
+    "single": "single",
+    "batch": "single",
+    "revisit_condition": "Reconsider a five-issue split only if a held-out repeat shows at least 25% lower wall time, all-five accuracy no worse than the single agent, and M/S token multiplier <=1.5."
+  }
 }
