@@ -171,6 +171,15 @@ flowchart TD
   wall time, no worse all-five accuracy than S, and M/S token multiplier <=1.5.
 - The record: `decisions/0006-topology.md`
 
+## Prompt storage follow-up
+
+After the measured experiment, the investigator task brief, retry instruction and
+publisher task brief were extracted into prompt files without changing the
+rendered text. The update was checked with 27 byte-identical prompt comparisons
+and a free five-issue ScriptedWorkers batch. The 72 measured results describe the
+original run-time text and have been retained; this follow-up changes file layout
+only. Validation is recorded in `reports/prompt-layout-06-validation.txt`.
+
 ## AI assistance
 
 Codex reviewed the local README, `checks/FORMATS.md`, checker, report templates
@@ -180,5 +189,7 @@ Codex also summarized the measured runs and drafted the topology decision. The
 original suite, API ping, scripted plumbing checks, official guard replays and
 `python checks/check_06.py --here` were run; the final working-tree check found
 72 finished measured runs and no integrity flags. The separate instructor
-handout was not available, and the final Git tags/push have not been performed.
+handout was not available. The initial final submission and both assignment tags
+were verified on the remote on 2026-11-13; subsequent documentation and prompt
+layout corrections are recorded as follow-up changes.
 The student should review the analysis and final submission before submitting.

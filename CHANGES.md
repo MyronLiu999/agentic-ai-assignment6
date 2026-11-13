@@ -28,6 +28,8 @@ Removals are logged like additions.
 - **Removed:** autonomous merge; pushes to a protected branch
 - **Constrained:** push_commit and post_comment by circumstance; every gated call to a person's answer, and no answer to a hold
 
+## Assignment 6
+
 - **Added:** a bounded coordinator/investigator/publisher split, typed worker returns, shared-state guards and a matched-spend S-plus control; measured S, M and S-plus on eight fixed tasks across three sweeps
 - **Removed:** nothing
 - **Constrained:** investigators to issue-scoped reads and structured returns, publishers to validated writes in label/PR/comment order, and the split decision to measured accuracy, token use and latency

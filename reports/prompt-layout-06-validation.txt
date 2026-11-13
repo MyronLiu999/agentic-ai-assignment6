@@ -1,0 +1,5 @@
+Prompt relocation validation
+27 byte-identical rendered prompt comparisons passed.
+Patch application and Python syntax passed.
+Free ScriptedWorkers batch: 5 valid worker returns; combined check passed.
+Original 72 measured runs are retained; this is a prompt-storage-only refactor.
