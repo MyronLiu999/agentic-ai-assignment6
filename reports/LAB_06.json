@@ -1,7 +1,17 @@
 {
   "gates": {
-    "daily": ["fail", "not_reached", "not_reached", "not_reached"],
-    "batch": ["pass", "pass", "pass", "fail"]
+    "daily": [
+      "fail",
+      "not_reached",
+      "not_reached",
+      "not_reached"
+    ],
+    "batch": [
+      "pass",
+      "pass",
+      "pass",
+      "fail"
+    ]
   },
   "constants": {
     "model": "gpt-4o",
@@ -124,12 +134,12 @@
   "spend_check": {
     "single": {
       "spent_more": "no",
-      "spend_raises_score": "no",
+      "spend_raises_score": "yes",
       "one_agent_as_well": "no"
     },
     "batch": {
       "spent_more": "no",
-      "spend_raises_score": "no",
+      "spend_raises_score": "yes",
       "one_agent_as_well": "yes"
     }
   },
