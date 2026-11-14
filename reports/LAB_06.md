@@ -1,19 +1,13 @@
 # Assignment 6 · Split it, measure it, decide
 
-Model: OpenAI gpt-4o, copied from Assignment 5 and to be held fixed across all runs.
+Model: OpenAI gpt-4o, copied from Assignment 5 and held fixed across all runs.
 
-Status (2026-11-13): prediction commit a9df821 is on main and origin/main.
-The original course suite passed (107 tests, two skips) with Windows GC before
-temp cleanup, and the gpt-4o tool-calling ping passed. Part B code and free
-scripted plumbing checks are in the restored `lab-06-split` branch at e20aa4c;
-measured Part C experiment is complete: 72 real runs across S, M and S-plus.
-This execution sandbox still fails DNS resolution for api.openai.com, while the
-user's PowerShell ping passed. The
-second real development probe passed the grounded check; the first had stopped
-without a structured worker return and prompted a code correction. S completed all
-24 baseline runs: 18/18 single tasks passed, while 2/6 five-issue batches passed.
-Mean spend was 31,929 tokens per single and 303,596 per batch. M and S-plus each
-completed 24 runs. The instructor's separate handout is still unavailable.
+Summary: the prediction was committed alone on main as a9df821 before any split
+run. The split, its guards and the S-plus control are on `lab-06-split`, tagged
+`lab-06-split-final`. The measured experiment has 72 finished real runs: the
+eight fixed tasks, three sweeps, in each of S, M and S-plus. S passed 18/18
+single issues and 2/6 batches; M passed 10/18 and 0/6; S-plus passed 4/18 and
+0/6. The decision keeps the single agent for both task sizes.
 
 ## Part A · The gates, before you build
 
@@ -178,7 +172,7 @@ publisher task brief were extracted into prompt files without changing the
 rendered text. The update was checked with 27 byte-identical prompt comparisons
 and a free five-issue ScriptedWorkers batch. The 72 measured results describe the
 original run-time text and have been retained; this follow-up changes file layout
-only. Validation is recorded in `reports/prompt-layout-06-validation.txt`.
+only. The prompt comparisons and the free batch check both passed.
 
 ## AI assistance
 
@@ -192,4 +186,6 @@ original suite, API ping, scripted plumbing checks, official guard replays and
 handout was not available. The initial final submission and both assignment tags
 were verified on the remote on 2026-11-13; subsequent documentation and prompt
 layout corrections are recorded as follow-up changes.
-The student should review the analysis and final submission before submitting.
+Claude Code (Claude Opus 5.5) then audited the submission against the README,
+ran `make check-06` on main, removed working notes and a stray file from main,
+and rewrote this report's opening summary from the figures in Part C.
